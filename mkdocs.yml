@@ -1,0 +1,98 @@
+# Site information
+site_name: posteriors
+site_author: Normal Computing
+site_description: Uncertainty Quantification with PyTorch
+
+# Repository
+repo_name: normal-computing-oss/posteriors
+repo_url: https://github.com/normal-computing-oss/posteriors
+
+# Configuration
+theme:
+  name: material
+  font:
+    text: Inter
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+  logo: https://storage.googleapis.com/posteriors/logo_light.png
+  favicon: https://storage.googleapis.com/posteriors/logo_square.png
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - content.code.copy
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            members_order: source
+            group_by_category: false
+            show_root_toc_entry: false
+            show_root_members_full_path: true
+
+
+markdown_extensions:
+  - footnotes
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      permalink: "𝞡"
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+
+# Navigation structure
+nav:
+  - Home: index.md
+  - Getting Started: getting_started.md
+  - Log Posteriors: log_posteriors.md
+  - gotchas.md
+  - Tutorials: tutorials/index.md
+  - contributing.md
+  - API:
+    - api/index.md
+    - EKF:
+      - Dense Fisher: api/ekf/dense_fisher.md
+      - Diagonal Fisher: api/ekf/diag_fisher.md
+    - Laplace:
+      - Dense Fisher: api/laplace/dense_fisher.md
+      - Dense GGN: api/laplace/dense_ggn.md
+      - Dense Hessian: api/laplace/dense_hessian.md
+      - Diagonal Fisher: api/laplace/diag_fisher.md
+      - Diagonal GGN: api/laplace/diag_ggn.md
+    - SGMCMC:
+      - api/sgmcmc/sgld.md
+      - api/sgmcmc/sghmc.md
+      - api/sgmcmc/sgnht.md
+      - api/sgmcmc/baoa.md
+      - api/sgmcmc/sglrw.md
+    - VI:
+      - Dense: api/vi/dense.md
+      - Diag: api/vi/diag.md
+    - api/optim.md
+    - TorchOpt: api/torchopt.md
+    - Tree Utils: api/tree_utils.md
+    - api/types.md
+    - api/utils.md
+
+
+# Customization
+extra_css:
+  - stylesheets/extra.css
